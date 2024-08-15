@@ -1,0 +1,13 @@
+train: C:/brain-tumors-detection_yolov10/Brain-Tumors-Detection-2/train/images
+val: C:/brain-tumors-detection_yolov10/Brain-Tumors-Detection-2/valid/images
+#test: ../test/images
+
+nc: 1
+names: ['tumor']
+
+roboflow:
+  workspace: test-svk7h
+  project: brain-tumors-detection
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/test-svk7h/brain-tumors-detection/dataset/2
