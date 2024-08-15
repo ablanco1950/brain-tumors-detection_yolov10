@@ -37,7 +37,7 @@ that evaluate the 100 test images downloaded from
 
 https://universe.roboflow.com/test-svk7h/brain-tumors-detection/dataset/2
 
-The images are presented on the screen with a red box , or several red boxes, indicating the prediction, with a green box the label of the image that must indicate te true position, also appears the confidence of predicted tumors.
+The images are presented on the screen with a red box , or several red boxes, indicating the predictions, with a green box the label of the image that must indicate te true position, also appears the confidence of predicted tumors.
 
 All images have predicted tumors (is important in this case to detect in spite of been a false detection)
 
