@@ -21,7 +21,7 @@ upgrade ultralytics:
 
 python pip-script.py install --upgrade ultralytics
 
-And download from https://github.com/THU-MIG/yolov10/releases the yolov10n.pt and yolov10s.pt model. In case this operation causes problems, these files are attached with the rest of the project files.
+And download from https://github.com/THU-MIG/yolov10/releases the yolov10n.pt model. In case this operation causes problems, these files are attached with the rest of the project files.
 
 Unzip the test.zip folder
 
