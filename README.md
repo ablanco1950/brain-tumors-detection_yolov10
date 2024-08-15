@@ -62,7 +62,7 @@ To obtain this model, the following has been executed:
 If you do not have a roboflow user key, you can obtain one at
 https://docs.roboflow.com/api-reference/authentication
 
-After downloading the dataset a folder named Brain-Tumors-Detection-2 is created which must be moved to the project folder
+After downloading, the dataset a folder named Brain-Tumors-Detection-2 is created which must be moved to the project folder
 
 Execute:
 
