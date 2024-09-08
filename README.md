@@ -37,13 +37,15 @@ that evaluate the 100 test images downloaded from
 
 https://universe.roboflow.com/test-svk7h/brain-tumors-detection/dataset/2
 
-The images are presented on the screen with a red box , or several red boxes, indicating the predictions, with a green box the label of the image that must indicate te true position, also appears the confidence of predicted tumors.
+The images are presented on the screen with a red box , or several red boxes, indicating the predictions, with a green box the label of the image that must indicate te true position (labeled), also appears the confidence of predicted tumors.
 
 All images have predicted tumors (is important in this case to detect in spite of been a false detection)
 
-All predictions match the labels (more or less) except in three cases where they do not match (images y719, y774 and y796): 97% Precision
+All predictions match the labels (more or less) except in three cases where they do not match (images: y719, y751, y774, y777 and y783): 95% Precision
 
-In 11 cases, in addition to the tumor prediction, several additional tumors are detected (images y713, y716, y729, y734, y736, y738, y741, y746, y761, y777 and y 790): 89%  Recall
+In 11 cases, in addition to the tumor prediction, several additional tumors, no labeled, are detected (images y713, y721,  y734, y736, y736, y741, y746, y761, y777, y790 and y y798): 89%  Recall
+
+The above success rates are actually higher, since there may be several detected and several labeled tumors in an image, it has been considered that only one has not been detected to consider the entire image with a detection error, even if in other tumors in the same image the detection coincides with the labels.
 
 The model has been obtained with a MAP50 of 0.831 and MAP50-95 of 0.548 corresponding to epoch 19 of the training (see log in the attached LOG.txt file, in which MAP50 values ​​higher than 0.91 are obtained)
 
