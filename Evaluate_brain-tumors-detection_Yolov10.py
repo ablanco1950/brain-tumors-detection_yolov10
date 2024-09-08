@@ -112,6 +112,7 @@ def loadlabels(dirnameLabels):
 
                  Label=""
                  xyxy=""
+                 TabLinxyxy=[]
                  for linea in f:
                       #print(filename)
                       #print(linea)
@@ -121,7 +122,7 @@ def loadlabels(dirnameLabels):
                       Label=class_list[indexFracture]
                       #print(Label)
                       xyxy=linea[2:]
-                      
+                      TabLinxyxy.append(xyxy)
                                             
                  Labels.append(Label)
                  
@@ -131,7 +132,7 @@ def loadlabels(dirnameLabels):
                      ContNoLabels+=1 
                  
                  TabFileLabelsName.append(filename)
-                 Tabxyxy.append(xyxy)
+                 Tabxyxy.append(TabLinxyxy)
      return Labels, TabFileLabelsName, Tabxyxy, ContLabels, ContNoLabels
 
 def unconvert(width, height, x, y, w, h):
@@ -144,7 +145,7 @@ def unconvert(width, height, x, y, w, h):
     return xmin, ymin, xmax, ymax
 
 # ttps://medium.chom/@chanon.krittapholchai/build-object-detection-gui-with-yolov8-and-pysimplegui-76d5f5464d6c
-def Detect_sagittal_t1wceWithYolov10 (img):
+def Detect_BrainTumor_With_Yolov10 (img):
   
    Tabcrop_sagittal_t1wce=[]
    
@@ -281,26 +282,28 @@ for i in range (len(imagesComplete)):
             gray=imagesComplete[i]
             img=gray
             imgTrue=imagesComplete[i]
+            #print(True)
+            #print(TabxyxyTrue[i])
+            for z in range (len(TabxyxyTrue[i])):
+                 XcenterYcenterWH=TabxyxyTrue[i][z].split(" ")
+                 width=float(imgTrue.shape[0])
+                 height=float(imgTrue.shape[1])
+                 x=float(XcenterYcenterWH[0])
+                 y=float(XcenterYcenterWH[1])
+                 w=float(XcenterYcenterWH[2])
+                 h=float(XcenterYcenterWH[3])
+                 xTrue,yTrue,xMaxTrue,yMaxTrue=unconvert(width, height, x, y, w, h)
+                
+                 start_pointTrue=(int(xTrue),int(yTrue)) 
+                 end_pointTrue=(int(xMaxTrue),int( yMaxTrue))
+                
+                 colorTrue=(0,0,255)
+                 
+                 # Using cv2.rectangle() method
+                 # Draw a rectangle with green line borders of thickness of 2 px
+                 imgTrue = cv2.rectangle(imgTrue, start_pointTrue, end_pointTrue,(0,255,0), 2)
            
-            XcenterYcenterWH=TabxyxyTrue[i].split(" ")
-            width=float(imgTrue.shape[0])
-            height=float(imgTrue.shape[1])
-            x=float(XcenterYcenterWH[0])
-            y=float(XcenterYcenterWH[1])
-            w=float(XcenterYcenterWH[2])
-            h=float(XcenterYcenterWH[3])
-            xTrue,yTrue,xMaxTrue,yMaxTrue=unconvert(width, height, x, y, w, h)
-           
-            start_pointTrue=(int(xTrue),int(yTrue)) 
-            end_pointTrue=(int(xMaxTrue),int( yMaxTrue))
-           
-            colorTrue=(0,0,255)
-            
-            # Using cv2.rectangle() method
-            # Draw a rectangle with green line borders of thickness of 2 px
-            imgTrue = cv2.rectangle(imgTrue, start_pointTrue, end_pointTrue,(0,255,0), 2)
-           
-            Tabconfidence, TabImgSelect, y, yMax, x, xMax, Tabclass_name, Tabclass_cod, LabelTotal =Detect_sagittal_t1wceWithYolov10(gray)
+            Tabconfidence, TabImgSelect, y, yMax, x, xMax, Tabclass_name, Tabclass_cod, LabelTotal =Detect_BrainTumor_With_Yolov10(gray)
             Tabnms_boxes=[]
             #print(gray.shape)
             #if TabImgSelect==[]:
