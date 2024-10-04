@@ -9,7 +9,7 @@ Install yolov10 (if not yet installed) following the instructions given at: http
 
 which may be reduced to !pip install -q git+https://github.com/THU-MIG/yolov10.git
 
-If you already have ultralytics installed, it would be advisable to upgrade ultralytics, unless you have applications based on yolov10 without updating, which could be affected by the update.
+If you already have ultralytics installed, it would be advisable to upgrade ultralytics, unless you have applications based on yolov10 without updating, which could be affected by the update. In that case is better install de project in a separate environment.
 
 For that you must have an upgraded version of ultralytics and the proper version of lap, for that:
 
