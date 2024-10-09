@@ -94,7 +94,7 @@ Conclusions:
 
 The results obtained with this project are good and should also be attributed to the set of images in the dataset, all of which come with the same size 640x640 (that of yolov10) without the need for them to be high resolution (just check the size of the images), and correct labeling is also observed.
 
-A test with the first 6 images of  44 images that make up the test file, in red the predicted box, in green the labeled box
+A test with the first 6 images of  100 images that make up the test file, in red the predicted box, in green the labeled box
 
 ![Figure 1](https://github.com/ablanco1950/brain-tumors-detection_yolov10/blob/main/Figure_1.png)
 ![Figure 2](https://github.com/ablanco1950/brain-tumors-detection_yolov10/blob/main/Figure_2.png)
