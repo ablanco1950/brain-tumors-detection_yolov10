@@ -21,6 +21,8 @@ upgrade ultralytics:
 
 python pip-script.py install --upgrade ultralytics
 
+python pip-script.py install dill ( in old versions ultralytics)
+
 And download from https://github.com/THU-MIG/yolov10/releases the yolov10n.pt model. In case this operation causes problems, these files are attached with the rest of the project files.
 
 Unzip the test.zip folder
